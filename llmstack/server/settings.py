@@ -18,13 +18,14 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv(
     'ALLOWED_HOSTS',
     '127.0.0.1,localhost',
+    '18.61.186.95,ec2-18-61-186-95.ap-south-2.compute.amazonaws.com',
 ).split(',')
 
-LLMSTACK_PORT = os.getenv('LLMSTACK_PORT', 3000)
+LLMSTACK_PORT = os.getenv('LLMSTACK_PORT', 80)
 
 CSRF_TRUSTED_ORIGINS = os.getenv(
     'CSRF_TRUSTED_ORIGINS',
-    f'http://127.0.0.1:{LLMSTACK_PORT},http://localhost:{LLMSTACK_PORT}',
+    f'http://18.61.186.95:{LLMSTACK_PORT},http://18.61.186.95:{LLMSTACK_PORT}',
 ).split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
